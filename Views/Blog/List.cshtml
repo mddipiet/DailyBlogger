@@ -1,0 +1,26 @@
+﻿@model IEnumerable<DailyBlogger2.Models.BlogPost>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Blog Posts</title>
+</head>
+<body>
+    <p>
+
+    </p>
+    @foreach (var item in Model) {
+    <div>
+        <a asp-controller="Blog" asp-action="Details" asp-route-id=@item.id> @Html.DisplayFor(m => item.blogTitle) </a>
+        <!--<p>@Html.DisplayFor(m => item.content) </p>-->
+        <p>@Html.DisplayFor(m => item.blogDate) </p>
+    </div>
+    }
+</body>
+</html>
+

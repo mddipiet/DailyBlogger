@@ -1,0 +1,36 @@
+﻿@model DailyBlogger2.Models.BlogPost
+
+@{
+    ViewData["Title"] = "Edit Post";
+}
+
+<h2>Edit</h2>
+
+<h4>Blogpost</h4>
+<hr />
+<div class="Row">
+    <div class="col-md-4">
+        <form asp-action="Update">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="blogTitle" class="control-label"></label>
+                <input asp-for="blogTitle" class="form-control" />
+                <span asp-validation-for="blogTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="content" class="control-label"></label>
+                <input asp-for="content" class="form-control" />
+                <span asp-validation-for="content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="blogDate" class="control-label"></label>
+                <input asp-for="blogDate" class="form-control" />
+                <span asp-validation-for="blogDate" class="text-danger"></span>
+            </div>
+            @Html.HiddenFor(m => m.id)
+            <div class="form-group">
+                <input type="submit" value="Update Post" class"btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
